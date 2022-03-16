@@ -1,0 +1,74 @@
+<html lang="en">
+    <head>
+        <!--
+            Name: Ed Marie May Macapagal
+            Section: WD-201
+        -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+
+        <!-- Link to the CDN Vue Package -->
+        <script src="https://unpkg.com/vue@3.0.2"></script>
+
+        <title>Vue JS Demo Application</title>
+    </head>
+
+    <body>
+        <div id="app">
+            <!-- This portion is controlled by Vue -->
+            <p>{{ title }} - {{ author }} - {{ age }}</p>
+            
+            <!--Events on Vue using v-on-->
+            <button v-on:click="age++">Get Older</button>
+            <button v-on:click="age--">Get Younger</button>
+            <button @click="title = 'The title has changed.'">Change Title</button>
+        </div>
+
+        <!-- Two-way data binding -->
+        <div id="two-way-binding">
+            <p>{{ message }}</p>
+            <input v-model="message" />
+        </div>
+
+        <!-- using v-if-->
+        <div id="conditional-rendering">
+            <span v-if="seen">Now you see me!</span>
+        </div>
+
+        <!-- this is hooked up to a method in the books.js -->
+        <div id="books">
+            <div v-if="showBooks">
+                <p>{{ btitle }} - {{ bauthor }} - {{ year }} - {{ publisher }}</p>
+            </div>
+            
+            <button @click="toggleShowBooks">
+                <span v-if="showBooks">Hide Books</span>
+                <span v-else>Show Books</span>
+            </button>
+        </div>
+
+        <!-- using v-for for directive -->
+        <div id="list-rendering">
+            <ol>
+                <li v-for="todo in todos">
+                    {{ todo.text}}
+                </li>
+            </ol>
+        </div>
+
+        <!--Not controlled by Vue-->
+
+        <!-- Link to app.js File -->
+        <script src="app.js"></script>
+        <!-- Link to twoway.js File -->
+        <script src="twoway.js"></script>
+        <!-- Link to conditionalif.js File -->
+        <script src="conditionalif.js"></script>
+        <!-- Link to books.js File -->
+        <script src="books.js"></script>
+        <!-- Link to listfor.js File -->
+        <script src="listfor.js"></script>
+
+    </body>
+</html>
